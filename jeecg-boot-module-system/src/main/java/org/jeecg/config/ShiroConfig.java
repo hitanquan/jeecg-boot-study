@@ -68,7 +68,7 @@ public class ShiroConfig {
 		}
 
 		filterChainDefinitionMap.put( "/sys/common/*","anon" ); // upload相关操作接口排除
-		filterChainDefinitionMap.put( "/carManage2/testCar/*","anon" ); // testCar相关操作接口排除
+		filterChainDefinitionMap.put( "/carManage/car/*","anon" ); // carManage相关操作接口排除
 		filterChainDefinitionMap.put( "/car/*","anon" ); // car相关操作接口排除
 		filterChainDefinitionMap.put( "/sys/annountCement/*","anon" ); // annountCement相关操作接口排除
 		filterChainDefinitionMap.put( "/sys/sysDepart/*","anon" ); // sysDepart相关操作接口排除

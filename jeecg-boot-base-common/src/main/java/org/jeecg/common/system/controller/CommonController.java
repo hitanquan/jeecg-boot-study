@@ -34,7 +34,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>
- * 用户表 前端控制器
+ * 用户表 后端控制器
  * </p>
  *
  * @Author scott
@@ -78,8 +78,10 @@ public class CommonController {
 		String savePath = "";
 		String bizPath = request.getParameter("biz");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-		MultipartFile file = multipartRequest.getFile("file");// 获取上传文件对象
-			if(oConvertUtils.isEmpty(bizPath)){
+		// 获取上传文件对象，通过 postman 测试时传入的是该file参数
+		MultipartFile file = multipartRequest.getFile("file");
+		if(oConvertUtils.isEmpty(bizPath)){
+			// 提供了三种文件上传的方式：阿里云 oss、本地、minio，在开发配置文件 application_dev.yml 中
 			if(CommonConstant.UPLOAD_TYPE_OSS.equals(uploadType)){
 				result.setMessage("使用阿里云文件上传时，必须添加目录！");
 				result.setSuccess(false);
@@ -103,6 +105,7 @@ public class CommonController {
 		return result;
 	}
 
+
 	/**
 	 * 本地文件上传
 	 * @param mf 文件
@@ -111,22 +114,26 @@ public class CommonController {
 	 */
 	private String uploadLocal(MultipartFile mf,String bizPath){
 		try {
+			// 拿到项目根路径：http://localhost:8080/jeecg-boot
 			URL resource = this.getClass().getResource("/");
 			String path = resource.getPath();
+			// 项目根路径 path + 上传文件保存的路径 uploadpath + 自定义路径 bizPath = 图片全路径
 			String ctxPath = path + uploadpath;
 			String fileName = null;
 			File file = new File(ctxPath + File.separator + bizPath + File.separator );
 			if (!file.exists()) {
-				file.mkdirs();// 创建文件根目录
+				// 创建文件根目录
+				file.mkdirs();
 			}
-			String orgName = mf.getOriginalFilename();// 获取文件名
+			// 获取文件名
+			String orgName = mf.getOriginalFilename();
+			// 对文件名做一些字符串操作，重命名
 			fileName = orgName.substring(0, orgName.lastIndexOf(".")) + "_" + System.currentTimeMillis() + orgName.substring(orgName.indexOf("."));
 			String savePath = file.getPath() + File.separator + fileName;
 			File savefile = new File(savePath);
 			FileCopyUtils.copy(mf.getBytes(), savefile);
-			// 将文件路径存储到数据库表
+			// 将文件路径存储到数据库表：现在不需要这么做了
 			// To do ……   http://localhost:8081/jeecg-boot/static/upFiles/图片全名.jpg
-
 			String dbpath = null;
 			if(oConvertUtils.isNotEmpty(bizPath)){
 				dbpath = bizPath + File.separator + fileName;
