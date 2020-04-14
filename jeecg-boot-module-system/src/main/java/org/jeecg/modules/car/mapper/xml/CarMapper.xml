@@ -2,18 +2,5 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.jeecg.modules.car.mapper.CarMapper">
 
-	<update id="updateTreeNodeStatus" parameterType="java.lang.String">
-		update test_demo_car set has_child = #{status} where id = #{id}
-	</update>
-
-	<!-- 根据名称查询 -->
-	<select id="selectByName" resultType="org.jeecg.modules.car.entity.Car">
-		select *  from  test_demo_car  where name = #{name}
-	</select>
-
-	<!-- 根据类型查询 -->
-	<select id="selectByType" resultType="org.jeecg.modules.car.entity.Car">
-		select *  from  test_demo_car  where type = #{type}
-	</select>
 
 </mapper>

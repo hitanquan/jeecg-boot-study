@@ -51,6 +51,8 @@ public class CommonController {
 	@Value(value = "${jeecg.path.upload}")
 	private String uploadpath;
 
+
+
 	/**
 	 * 本地：local minio：minio 阿里：alioss
 	 */
@@ -75,12 +77,14 @@ public class CommonController {
 	@PostMapping(value = "/upload")
 	public Result<?> upload(HttpServletRequest request, HttpServletResponse response) {
 		Result<?> result = new Result<>();
+		// 定义文件保存路径
 		String savePath = "";
+		// 获取前台传过来的参数，是保存文件的目录
 		String bizPath = request.getParameter("biz");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		// 获取上传文件对象，通过 postman 测试时传入的是该file参数
 		MultipartFile file = multipartRequest.getFile("file");
-		if(oConvertUtils.isEmpty(bizPath)){
+		if(oConvertUtils.isEmpty(bizPath)) {
 			// 提供了三种文件上传的方式：阿里云 oss、本地、minio，在开发配置文件 application_dev.yml 中
 			if(CommonConstant.UPLOAD_TYPE_OSS.equals(uploadType)){
 				result.setMessage("使用阿里云文件上传时，必须添加目录！");
@@ -112,11 +116,18 @@ public class CommonController {
 	 * @param bizPath  自定义路径
 	 * @return
 	 */
-	private String uploadLocal(MultipartFile mf,String bizPath){
+	private String uploadLocal2(MultipartFile mf,String bizPath) {
 		try {
-			// 拿到项目根路径：http://localhost:8080/jeecg-boot
+			// 拿到项目根路径：E:/myCode/jeecg-boot-study/jeecg-boot-module-system/target/class/
 			URL resource = this.getClass().getResource("/");
+			// URL resource = CommonController.class.getClassLoader().getResource("/");
 			String path = resource.getPath();
+			// 对路径进行截取
+			//path = path.substring(0, path.length() - 15);
+			/*String[] split = path.split("/", 6);
+			for (int i = 0; i < split.length; i++) {
+				path = split.toString();
+			}*/
 			// 项目根路径 path + 上传文件保存的路径 uploadpath + 自定义路径 bizPath = 图片全路径
 			String ctxPath = path + uploadpath;
 			String fileName = null;
@@ -132,8 +143,8 @@ public class CommonController {
 			String savePath = file.getPath() + File.separator + fileName;
 			File savefile = new File(savePath);
 			FileCopyUtils.copy(mf.getBytes(), savefile);
-			// 将文件路径存储到数据库表：现在不需要这么做了
-			// To do ……   http://localhost:8081/jeecg-boot/static/upFiles/图片全名.jpg
+			// Todo 将文件路径存储到数据库表：现在不需要这么做了，在CarController类rootList方法中做了相关配置
+			// Todo ……  http://localhost:8081/jeecg-boot/static/upFiles/图片全名.jpg
 			String dbpath = null;
 			if(oConvertUtils.isNotEmpty(bizPath)){
 				dbpath = bizPath + File.separator + fileName;
@@ -150,42 +161,40 @@ public class CommonController {
 		return "";
 	}
 
-//	@PostMapping(value = "/upload2")
-//	public Result<?> upload2(HttpServletRequest request, HttpServletResponse response) {
-//		Result<?> result = new Result<>();
-//		try {
-//			String ctxPath = uploadpath;
-//			String fileName = null;
-//			String bizPath = "files";
-//			String tempBizPath = request.getParameter("biz");
-//			if(oConvertUtils.isNotEmpty(tempBizPath)){
-//				bizPath = tempBizPath;
-//			}
-//			String nowday = new SimpleDateFormat("yyyyMMdd").format(new Date());
-//			File file = new File(ctxPath + File.separator + bizPath + File.separator + nowday);
-//			if (!file.exists()) {
-//				file.mkdirs();// 创建文件根目录
-//			}
-//			MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-//			MultipartFile mf = multipartRequest.getFile("file");// 获取上传文件对象
-//			String orgName = mf.getOriginalFilename();// 获取文件名
-//			fileName = orgName.substring(0, orgName.lastIndexOf(".")) + "_" + System.currentTimeMillis() + orgName.substring(orgName.indexOf("."));
-//			String savePath = file.getPath() + File.separator + fileName;
-//			File savefile = new File(savePath);
-//			FileCopyUtils.copy(mf.getBytes(), savefile);
-//			String dbpath = bizPath + File.separator + nowday + File.separator + fileName;
-//			if (dbpath.contains("\\")) {
-//				dbpath = dbpath.replace("\\", "/");
-//			}
-//			result.setMessage(dbpath);
-//			result.setSuccess(true);
-//		} catch (IOException e) {
-//			result.setSuccess(false);
-//			result.setMessage(e.getMessage());
-//			log.error(e.getMessage(), e);
-//		}
-//		return result;
-//	}
+	/**
+	 * 本地文件上传
+	 * @param mf 文件
+	 * @param bizPath  自定义路径
+	 * @return
+	 */
+	private String uploadLocal(MultipartFile mf,String bizPath){
+		try {
+			String ctxPath = uploadpath;
+			String fileName = null;
+			File file = new File(ctxPath + File.separator + bizPath + File.separator );
+			if (!file.exists()) {
+				file.mkdirs();// 创建文件根目录
+			}
+			String orgName = mf.getOriginalFilename();// 获取文件名
+			fileName = orgName.substring(0, orgName.lastIndexOf(".")) + "_" + System.currentTimeMillis() + orgName.substring(orgName.indexOf("."));
+			String savePath = file.getPath() + File.separator + fileName;
+			File savefile = new File(savePath);
+			FileCopyUtils.copy(mf.getBytes(), savefile);
+			String dbpath = null;
+			if(oConvertUtils.isNotEmpty(bizPath)){
+				dbpath = bizPath + File.separator + fileName;
+			}else{
+				dbpath = fileName;
+			}
+			if (dbpath.contains("\\")) {
+				dbpath = dbpath.replace("\\", "/");
+			}
+			return dbpath;
+		} catch (IOException e) {
+			log.error(e.getMessage(), e);
+		}
+		return "";
+	}
 
 	/**
 	 * 预览图片&下载文件

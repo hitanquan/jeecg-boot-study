@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -55,10 +56,13 @@ public class LoginController {
 
 	@ApiOperation("登录接口")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public Result<JSONObject> login(@RequestBody SysLoginModel sysLoginModel){
+	public Result<JSONObject> login(@RequestBody SysLoginModel sysLoginModel, HttpServletRequest request){
 		Result<JSONObject> result = new Result<JSONObject>();
 		String username = sysLoginModel.getUsername();
 		String password = sysLoginModel.getPassword();
+		// 将登录用户名存到session
+		// HttpSession session = request.getSession();
+		// session.setAttribute("loginUser",username);
 		//update-begin--Author:scott  Date:20190805 for：暂时注释掉密码加密逻辑，有点问题
 		//前端密码加密，后端进行密码解密
 		//password = AesEncryptUtil.desEncrypt(sysLoginModel.getPassword().replaceAll("%2B", "\\+")).trim();//密码解密

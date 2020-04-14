@@ -56,6 +56,7 @@ public class SysLogController {
 		//日志关键词
 		String keyWord = req.getParameter("keyWord");
 		if(oConvertUtils.isNotEmpty(keyWord)) {
+			// 根据日志关键词模糊查询相关内容
 			queryWrapper.like("log_content",keyWord);
 		}
 		//TODO 过滤逻辑处理

@@ -12,26 +12,4 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface CarMapper extends BaseMapper<Car> {
 
-	/**
-	 * 编辑节点状态
-	 * @param id
-	 * @param status
-	 */
-	void updateTreeNodeStatus(@Param("id") String id, @Param("status") String status);
-
-	/**
-	 * 根据名称查询car
-	 *
-	 * @param name
-	 * @return
-	 */
-	Car selectByName(String name);
-
-	/**
-	 * 通过类型查询Car
-	 * @param type
-	 * @return
-	 */
-	Car selectByType(String type);
-
 }

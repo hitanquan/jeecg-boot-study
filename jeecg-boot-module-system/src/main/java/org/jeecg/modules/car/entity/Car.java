@@ -35,6 +35,9 @@ public class Car implements Serializable {
 	/**别名*/
 	@Excel(name = "别名", width = 15)
 	private String alias;
+	/**标题*/
+	@Excel(name = "标题", width = 15)
+	private String title;
 	/**车类型*/
 	@Excel(name = "车类型", width = 15)
 	private String type;
@@ -72,11 +75,4 @@ public class Car implements Serializable {
 	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date updateTime;
-	/**父级节点*/
-	@Excel(name = "父级节点", width = 15)
-	private String pid;
-	/**是否有子节点*/
-	@Excel(name = "是否有子节点", width = 15, dicCode = "yn")
-	@Dict(dicCode = "yn")
-	private String hasChild;
 }

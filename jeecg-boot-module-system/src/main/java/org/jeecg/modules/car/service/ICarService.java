@@ -31,10 +31,10 @@ public interface ICarService extends IService<Car> {
 	/**删除节点*/
 	void deleteCar(String id) throws JeecgBootException;
 
-	/**通过名称查询*/
+	/**通过名称查询*//*
 	Car queryByName(String name);
 
-	/*通过类别查询*/
-	Car queryByType(String type);
+	*//*通过类别查询*//*
+	Car queryByType(String type);*/
 
 }
