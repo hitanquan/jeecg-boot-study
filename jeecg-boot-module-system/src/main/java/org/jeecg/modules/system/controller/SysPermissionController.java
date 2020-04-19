@@ -55,7 +55,7 @@ public class SysPermissionController {
 
 	/**
 	 * 加载数据节点
-	 * 
+	 * 获取系统菜单(按钮/权限)列表
 	 * @return
 	 */
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -63,11 +63,16 @@ public class SysPermissionController {
         long start = System.currentTimeMillis();
 		Result<List<SysPermissionTree>> result = new Result<>();
 		try {
-			LambdaQueryWrapper<SysPermission> query = new LambdaQueryWrapper<SysPermission>();
+			// 支持 Lambda 表达式的查询包装器
+			LambdaQueryWrapper<SysPermission> query = new LambdaQueryWrapper<>();
+			// 设置查询条件、排序方式
 			query.eq(SysPermission::getDelFlag, CommonConstant.DEL_FLAG_0);
 			query.orderByAsc(SysPermission::getSortNo);
+			// 调用服务层查询列表方法，调用的是 IService 接口的方法
 			List<SysPermission> list = sysPermissionService.list(query);
+			// 创建数组集合对象，存储菜单数据
 			List<SysPermissionTree> treeList = new ArrayList<>();
+			// 把菜单数据包装成树形结构的形式
 			getTreeList(treeList, list, null);
 			result.setResult(treeList);
 			result.setSuccess(true);
@@ -89,7 +94,7 @@ public class SysPermissionController {
         long start = System.currentTimeMillis();
 		Result<List<SysPermissionTree>> result = new Result<>();
 		try {
-			LambdaQueryWrapper<SysPermission> query = new LambdaQueryWrapper<SysPermission>();
+			LambdaQueryWrapper<SysPermission> query = new LambdaQueryWrapper<>();
 			query.eq(SysPermission::getMenuType,CommonConstant.MENU_TYPE_0);
 			query.eq(SysPermission::getDelFlag, CommonConstant.DEL_FLAG_0);
 			query.orderByAsc(SysPermission::getSortNo);
@@ -249,7 +254,7 @@ public class SysPermissionController {
 	 * @param permission
 	 * @return
 	 */
-	@RequiresRoles({ "admin" })
+	//@RequiresRoles({ "admin" })
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public Result<SysPermission> add(@RequestBody SysPermission permission) {
 		Result<SysPermission> result = new Result<SysPermission>();
@@ -269,7 +274,7 @@ public class SysPermissionController {
 	 * @param permission
 	 * @return
 	 */
-	@RequiresRoles({ "admin" })
+	// @RequiresRoles({ "admin" })
 	@RequestMapping(value = "/edit", method = { RequestMethod.PUT, RequestMethod.POST })
 	public Result<SysPermission> edit(@RequestBody SysPermission permission) {
 		Result<SysPermission> result = new Result<>();
@@ -289,7 +294,7 @@ public class SysPermissionController {
 	 * @param id
 	 * @return
 	 */
-	@RequiresRoles({ "admin" })
+	// @RequiresRoles({ "admin" })
 	@RequestMapping(value = "/delete", method = RequestMethod.DELETE)
 	public Result<SysPermission> delete(@RequestParam(name = "id", required = true) String id) {
 		Result<SysPermission> result = new Result<>();
@@ -309,7 +314,7 @@ public class SysPermissionController {
 	 * @param ids
 	 * @return
 	 */
-	@RequiresRoles({ "admin" })
+	// @RequiresRoles({ "admin" })
 	@RequestMapping(value = "/deleteBatch", method = RequestMethod.DELETE)
 	public Result<SysPermission> deleteBatch(@RequestParam(name = "ids", required = true) String ids) {
 		Result<SysPermission> result = new Result<>();
@@ -407,7 +412,7 @@ public class SysPermissionController {
 	 * @return
 	 */
 	@RequestMapping(value = "/saveRolePermission", method = RequestMethod.POST)
-	@RequiresRoles({ "admin" })
+	// @RequiresRoles({ "admin" })
 	public Result<String> saveRolePermission(@RequestBody JSONObject json) {
 		long start = System.currentTimeMillis();
 		Result<String> result = new Result<>();
@@ -425,6 +430,12 @@ public class SysPermissionController {
 		return result;
 	}
 
+	/**
+	 * 获取树形结构列表
+	 * @param treeList
+	 * @param metaList
+	 * @param temp
+	 */
 	private void getTreeList(List<SysPermissionTree> treeList, List<SysPermission> metaList, SysPermissionTree temp) {
 		for (SysPermission permission : metaList) {
 			String tempPid = permission.getParentId();

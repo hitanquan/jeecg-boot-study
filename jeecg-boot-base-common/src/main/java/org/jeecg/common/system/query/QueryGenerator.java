@@ -53,7 +53,7 @@ public class QueryGenerator {
 	private static final String ORDER_TYPE_ASC = "ASC";
 	
 	/**时间格式化 */
-	private static final ThreadLocal<SimpleDateFormat> local = new ThreadLocal<SimpleDateFormat>();
+	private static final ThreadLocal<SimpleDateFormat> local = new ThreadLocal<>();
 	private static SimpleDateFormat getTime(){
 		SimpleDateFormat time = local.get();
 		if(time == null){

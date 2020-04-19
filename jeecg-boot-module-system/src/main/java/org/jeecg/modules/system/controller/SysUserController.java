@@ -16,6 +16,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.jeecg.common.api.vo.Result;
+import org.jeecg.common.aspect.annotation.PermissionData;
 import org.jeecg.common.constant.CommonConstant;
 import org.jeecg.common.system.api.ISysBaseAPI;
 import org.jeecg.common.system.query.QueryGenerator;
@@ -85,16 +86,17 @@ public class SysUserController {
 
 	@Autowired
 	private RedisUtil redisUtil;
-	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public Result<IPage<SysUser>> queryPageList(SysUser user,@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
-									  @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,HttpServletRequest req) {
-		Result<IPage<SysUser>> result = new Result<IPage<SysUser>>();
-		QueryWrapper<SysUser> queryWrapper = QueryGenerator.initQueryWrapper(user, req.getParameterMap());
-		Page<SysUser> page = new Page<SysUser>(pageNo, pageSize);
-		IPage<SysUser> pageList = sysUserService.page(page, queryWrapper);
 
-		//批量查询用户的所属部门
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @PermissionData(pageComponent="system/UserList")
+    public Result<IPage<SysUser>> queryPageList(SysUser user,@RequestParam(name="pageNo", defaultValue="1") Integer pageNo,
+                                                @RequestParam(name="pageSize", defaultValue="10") Integer pageSize,HttpServletRequest req) {
+        Result<IPage<SysUser>> result = new Result<IPage<SysUser>>();
+        QueryWrapper<SysUser> queryWrapper = QueryGenerator.initQueryWrapper(user, req.getParameterMap());
+        Page<SysUser> page = new Page<SysUser>(pageNo, pageSize);
+        IPage<SysUser> pageList = sysUserService.page(page, queryWrapper);
+
+        //批量查询用户的所属部门
         //step.1 先拿到全部的 useids
         //step.2 通过 useids，一次性查询用户的所属部门名字
         List<String> userIds = pageList.getRecords().stream().map(SysUser::getId).collect(Collectors.toList());
@@ -105,11 +107,11 @@ public class SysUserController {
                 item.setOrgCode(useDepNames.get(item.getId()));
             });
         }
-		result.setSuccess(true);
-		result.setResult(pageList);
-		log.info(pageList.toString());
-		return result;
-	}
+        result.setSuccess(true);
+        result.setResult(pageList);
+        log.info(pageList.toString());
+        return result;
+    }
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
     @RequiresPermissions("user:add")
@@ -276,6 +278,7 @@ public class SysUserController {
      */
     @RequiresRoles({"admin"})
     @RequestMapping(value = "/changePassword", method = RequestMethod.PUT)
+    //@RequiresPermissions("user:changePassword")
     public Result<?> changePassword(@RequestBody SysUser sysUser) {
         SysUser u = this.sysUserService.getOne(new LambdaQueryWrapper<SysUser>().eq(SysUser::getUsername, sysUser.getUsername()));
         if (u == null) {
@@ -907,6 +910,7 @@ public class SysUserController {
 	 * 用户更改密码
 	 */
 	@GetMapping("/passwordChange")
+
 	public Result<SysUser> passwordChange(@RequestParam(name="username")String username,
 										  @RequestParam(name="password")String password,
 			                              @RequestParam(name="smscode")String smscode,
