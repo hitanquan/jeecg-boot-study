@@ -1,10 +1,13 @@
 package org.jeecg.modules.car.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.jeecg.common.exception.JeecgBootException;
 import org.jeecg.modules.car.entity.Car;
 import org.jeecg.modules.car.mapper.CarMapper;
 import org.jeecg.modules.car.service.ICarService;
+import org.jeecg.modules.car.vo.CarVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,4 +41,27 @@ public class CarServiceImpl extends ServiceImpl<CarMapper, Car> implements ICarS
         }
         carMapper.deleteById(id);
     }
+
+    @Override
+    public void updateCar2(CarVO car) {
+        Car carEntity = getById(car.getId());
+        carEntity.setName(car.getName());
+        carEntity.setAlias(car.getAlias());
+        carEntity.setIdentificationCode(car.getIdentificationCode());
+        carEntity.setSuggestPrice(Integer.parseInt(car.getSuggestPrice()));
+        carEntity.setType(car.getType());
+        carEntity.setLogoImg(car.getLogoImg());
+        carEntity.setTypeImg(car.getTypeImg());
+        carEntity.setLink(car.getLink());
+        carEntity.setIsNew(car.getIsNew());
+        boolean success = updateById(carEntity);
+        // 方式2
+        // UpdateWrapper<Car> updateWrapper = new UpdateWrapper<>();
+        // updateWrapper
+        //        .set().set().set()
+        //        .eq().eq();
+        //boolean update = update(updateWrapper);
+
+    }
+
 }

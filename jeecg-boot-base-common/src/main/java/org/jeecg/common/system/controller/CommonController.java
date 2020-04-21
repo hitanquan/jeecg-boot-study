@@ -43,6 +43,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RestController
 @RequestMapping("/sys/common")
+@SuppressWarnings("all")
 public class CommonController {
 
 	@Autowired

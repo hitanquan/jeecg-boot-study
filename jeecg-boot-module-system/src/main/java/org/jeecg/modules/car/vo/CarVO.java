@@ -20,14 +20,24 @@ public class CarVO implements Serializable {
 	private String alias;
 	private String title;
 	private String type;
-	// 数据表中是 int 类型，前端页面需要字符串
-	private String identificationCode;
 	private String suggestPrice;
-	private String logoImg;
+    // 数据表中是 int 类型，前端页面需要字符串
+    private String identificationCode;
+    private String logoImg;
 	private String typeImg;
 	private String link;
 	private Integer isNew;
+    private String createBy;
 	// 数据表中是 Date 类型， 前端页面需要字符串
 	private String createTime;
+    private String updateBy;
+	// 数据表中是 Date 类型， 前端页面需要字符串
 	private Date updateTime;
+	// 非数据库字段
+	// 入库时间
+    // private Date storageIime;
+    // 入库记录
+    private String storageRecord;
+    // 修改记录
+	private String updateRecord;
 }

@@ -4,6 +4,7 @@ import org.jeecg.modules.car.entity.Car;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.jeecg.common.exception.JeecgBootException;
 import org.jeecg.modules.car.entity.Car;
+import org.jeecg.modules.car.vo.CarVO;
 
 /**
  * @Description: 车型管理功能数据表
@@ -30,6 +31,8 @@ public interface ICarService extends IService<Car> {
 	
 	/**删除节点*/
 	void deleteCar(String id) throws JeecgBootException;
+
+	void updateCar2(CarVO car);
 
 	/**通过名称查询*//*
 	Car queryByName(String name);
