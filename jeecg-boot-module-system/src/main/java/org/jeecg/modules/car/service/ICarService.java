@@ -32,7 +32,7 @@ public interface ICarService extends IService<Car> {
 	/**删除节点*/
 	void deleteCar(String id) throws JeecgBootException;
 
-	void updateCar2(CarVO car);
+	void updateCar2(Car car);
 
 	/**通过名称查询*//*
 	Car queryByName(String name);

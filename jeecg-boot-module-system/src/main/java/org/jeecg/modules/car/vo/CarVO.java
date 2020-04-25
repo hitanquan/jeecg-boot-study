@@ -1,14 +1,19 @@
 package org.jeecg.modules.car.vo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.jeecg.common.aspect.annotation.Dict;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 
 
 /**
  * @Author tanquan
  * @Description 该类是数据表和前端页面数据交互的中间类
+ * @Date 2020年4月25日
  */
 @Data
 public class CarVO implements Serializable {
@@ -19,25 +24,26 @@ public class CarVO implements Serializable {
 	private String name;
 	private String alias;
 	private String title;
-	private String type;
-	private String suggestPrice;
-    // 数据表中是 int 类型，前端页面需要字符串
-    private String identificationCode;
+	private String  identificationCode;
+	@Dict(dicCode = "type")
+	private Integer type;
+	private BigDecimal suggestPrice;
     private String logoImg;
 	private String typeImg;
 	private String link;
-	private Integer isNew;
+	private Boolean isNew;
     private String createBy;
-	// 数据表中是 Date 类型， 前端页面需要字符串
-	private String createTime;
+	private Date createTime;
     private String updateBy;
-	// 数据表中是 Date 类型， 前端页面需要字符串
 	private Date updateTime;
-	// 非数据库字段
+	// 非数据库字段，只用于前台展示
+	// logo图
+	private String pageLogoImg;
+	// 类型图
+	private String pageTypeImg;
+	// 指导价
+	private BigDecimal guidePrice;
 	// 入库时间
-    // private Date storageIime;
-    // 入库记录
-    private String storageRecord;
-    // 修改记录
-	private String updateRecord;
+	private Date storageIime;
+
 }

@@ -38,15 +38,17 @@ public class Car implements Serializable {
 	/**标题*/
 	@Excel(name = "标题", width = 15)
 	private String title;
-	/**车类型*/
-	@Excel(name = "车类型", width = 15)
-	private String type;
 	/**识别码*/
 	@Excel(name = "识别码", width = 15)
 	private String identificationCode;
+	/**
+	 * 车类型（1:轿车，2:新能源，3:SUV/MPV，4:油电混合）
+	 */
+	@Excel(name = "车类型", width = 15)
+	private Integer type;
 	/**指导价*/
 	@Excel(name = "指导价", width = 15)
-	private Integer suggestPrice;
+	private BigDecimal suggestPrice;
 	/**logo图*/
 	@Excel(name = "logo图", width = 15)
 	private String logoImg;
@@ -58,13 +60,13 @@ public class Car implements Serializable {
 	private String link;
 	/**是否新品，1新品，0非新品*/
 	@Excel(name = "是否新品，1新品，0非新品", width = 15)
-	private Integer isNew;
+	private Boolean isNew;
 	/**创建人*/
 	@Excel(name = "创建人", width = 15)
 	private String createBy;
 	/**创建日期*/
-	@Excel(name = "创建日期", width = 20, format = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+	@Excel(name = "创建日期", width = 20, format = "yyyy-MM-dd")
+	@JsonFormat(timezone = "GMT+8", shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date createTime;
 	/**更新人*/
@@ -72,7 +74,8 @@ public class Car implements Serializable {
 	private String updateBy;
 	/**更新日期*/
 	@Excel(name = "更新日期", width = 20, format = "yyyy-MM-dd HH:mm:ss")
-	@JsonFormat(timezone = "GMT+8",pattern = "yyyy-MM-dd HH:mm:ss")
+	@JsonFormat(timezone = "GMT+8", shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     @DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date updateTime;
+
 }

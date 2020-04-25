@@ -11,6 +11,8 @@ import org.jeecg.modules.car.vo.CarVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 /**
  * @Description: 车型管理功能数据表
  * @Author: jeecg-boot
@@ -43,25 +45,42 @@ public class CarServiceImpl extends ServiceImpl<CarMapper, Car> implements ICarS
     }
 
     @Override
-    public void updateCar2(CarVO car) {
+    public void updateCar2(Car car) {
         Car carEntity = getById(car.getId());
         carEntity.setName(car.getName());
         carEntity.setAlias(car.getAlias());
         carEntity.setIdentificationCode(car.getIdentificationCode());
-        carEntity.setSuggestPrice(Integer.parseInt(car.getSuggestPrice()));
+        carEntity.setSuggestPrice(car.getSuggestPrice());
         carEntity.setType(car.getType());
-        carEntity.setLogoImg(car.getLogoImg());
-        carEntity.setTypeImg(car.getTypeImg());
-        carEntity.setLink(car.getLink());
-        carEntity.setIsNew(car.getIsNew());
-        boolean success = updateById(carEntity);
+        // 通过对字符串进行截取、拼接来处理图片路径
+        // String prefix = "http://localhost:8080/jeecg-boot/";
+        // String logoImg = car.getLogoImg();
+        // String typeImg = car.getTypeImg();
+        // String newPath = null;
+        // if (logoImg.startsWith(prefix)) {
+        // String newLogoImgPath = logoImg.substring(logoImg.length() - prefix.length());
+        //    carEntity.setLogoImg(newLogoImgPath);
+        // }
+        // if (typeImg.startsWith(prefix)) {
+        //  String newTypeImgPath = typeImg.substring(typeImg.length() - prefix.length());
+        //  carEntity.setTypeImg(newTypeImgPath);
+        // }else {
+        //  carEntity.setLogoImg(logoImg);
+        //  carEntity.setTypeImg(typeImg);
+        // }
+         carEntity.setLogoImg(car.getLogoImg());
+         carEntity.setTypeImg(car.getTypeImg());
+         carEntity.setLink(car.getLink());
+         carEntity.setIsNew(car.getIsNew());
+         carEntity.setUpdateBy(car.getUpdateBy());
+         updateById(carEntity);
+
         // 方式2
         // UpdateWrapper<Car> updateWrapper = new UpdateWrapper<>();
         // updateWrapper
         //        .set().set().set()
         //        .eq().eq();
-        //boolean update = update(updateWrapper);
-
+        // boolean update = update(updateWrapper);
     }
 
 }
