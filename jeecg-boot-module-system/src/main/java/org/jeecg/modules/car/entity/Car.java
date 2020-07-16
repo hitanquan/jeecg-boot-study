@@ -14,8 +14,8 @@ import org.jeecg.common.aspect.annotation.Dict;
 
 /**
  * @Description: 车型管理功能数据表
- * @Author: jeecg-boot
- * @Date:   2020-04-03
+ * @Author: tanquan
+ * @Date:   2020-05-03
  * @Version: V1.0
  */
 @Data
