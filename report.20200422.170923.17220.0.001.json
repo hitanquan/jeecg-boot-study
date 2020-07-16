@@ -1,0 +1,552 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20200422.170923.17220.0.001.json",
+    "dumpEventTime": "2020-04-22T17:09:23Z",
+    "dumpEventTimeStamp": "1587546563416",
+    "processId": 17220,
+    "cwd": "E:\\myCode\\ant-design-vue-jeecg",
+    "commandLine": [
+      "D:\\NodeJS\\node.exe",
+      "E:\\myCode\\ant-design-vue-jeecg\\node_modules\\.bin\\\\..\\@vue\\cli-service\\bin\\vue-cli-service.js",
+      "serve"
+    ],
+    "nodejsVersion": "v12.13.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.13.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.13.1/node-v12.13.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.13.1/node-v12.13.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.13.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 26883171,
+        "nice": 0,
+        "sys": 12854078,
+        "idle": 238971171,
+        "irq": 1785546
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 22830593,
+        "nice": 0,
+        "sys": 4696718,
+        "idle": 251180812,
+        "irq": 132703
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 30620062,
+        "nice": 0,
+        "sys": 9057312,
+        "idle": 239030750,
+        "irq": 90406
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 27071531,
+        "nice": 0,
+        "sys": 5371171,
+        "idle": 246265421,
+        "irq": 58531
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 25146359,
+        "nice": 0,
+        "sys": 7926109,
+        "idle": 245635656,
+        "irq": 89843
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 29653593,
+        "nice": 0,
+        "sys": 5935140,
+        "idle": 243119390,
+        "irq": 62703
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 27342046,
+        "nice": 0,
+        "sys": 6321000,
+        "idle": 245045078,
+        "irq": 97937
+      },
+      {
+        "model": "AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx  ",
+        "speed": 2096,
+        "user": 26188546,
+        "nice": 0,
+        "sys": 6398031,
+        "idle": 246121531,
+        "irq": 275546
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "WLAN",
+        "internal": false,
+        "mac": "40:5b:d8:5b:e2:71",
+        "address": "fe80::dd3b:4d36:5ef4:2ec5",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 11
+      },
+      {
+        "name": "WLAN",
+        "internal": false,
+        "mac": "40:5b:d8:5b:e2:71",
+        "address": "192.168.31.214",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "WIN-VTT8J6JN47J"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff718f81729",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff718f85b4c",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff718f84b08",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff71907369b",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff7198782de",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719860321",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff71972dbec",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719735cf1",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff71972b353",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719729b24",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff71974adf5",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff7194b6e19",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719ca404d",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c6afb6",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c23bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c23bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c23bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c23bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c23bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c1f1f0",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719d04e70",
+      "symbol": ""
+    },
+    {
+      "pc": "0x00007ff719c23bdc",
+      "symbol": ""
+    },
+    {
+      "pc": "0x000003ddcccf7a10",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 655790080,
+    "totalCommittedMemory": 655790080,
+    "usedMemory": 633474848,
+    "availableMemory": 1563790640,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 1048576,
+        "committedMemory": 1048576,
+        "capacity": 1047488,
+        "used": 1047408,
+        "available": 80
+      },
+      "old_space": {
+        "memorySize": 356626432,
+        "committedMemory": 356626432,
+        "capacity": 356111504,
+        "used": 346078904,
+        "available": 10032600
+      },
+      "code_space": {
+        "memorySize": 4358144,
+        "committedMemory": 4358144,
+        "capacity": 4123136,
+        "used": 3475072,
+        "available": 648064
+      },
+      "map_space": {
+        "memorySize": 13373440,
+        "committedMemory": 13373440,
+        "capacity": 13359216,
+        "used": 3551600,
+        "available": 9807616
+      },
+      "large_object_space": {
+        "memorySize": 279203840,
+        "committedMemory": 279203840,
+        "capacity": 278460384,
+        "used": 278460384,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 917504,
+        "committedMemory": 917504,
+        "capacity": 829184,
+        "used": 829184,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 1047488,
+        "used": 0,
+        "available": 1047488
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 464.265,
+    "kernelCpuSeconds": 32.14,
+    "cpuConsumptionPercent": 0.612264,
+    "maxRss": 1166311424,
+    "pageFaults": {
+      "IORequired": 3753805,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 7628,
+      "writes": 13733
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "=C:": "C:\\",
+    "=E:": "E:\\myCode\\ant-design-vue-jeecg",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\Administrator\\AppData\\Roaming",
+    "BABEL_ENV": "development",
+    "COLORTERM": "true",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "WIN-VTT8J6JN47J",
+    "ComSpec": "C:\\Windows\\system32\\cmd.exe",
+    "DEBUG_COLORS": "true",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "ELECTRON_NO_ATTACH_CONSOLE": "true",
+    "FORCE_COLOR": "true",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\Administrator",
+    "INIT_CWD": "E:\\myCode\\ant-design-vue-jeecg",
+    "IntelliJ IDEA": "D:\\IntelliJ IDEA 2018.3.5\\bin;",
+    "java_home": "D:\\java\\jdk1.8",
+    "LOCALAPPDATA": "C:\\Users\\Administrator\\AppData\\Local",
+    "LOGONSERVER": "\\\\WIN-VTT8J6JN47J",
+    "MOCHA_COLORS": "1",
+    "NODE": "D:\\NodeJS\\node.exe",
+    "NODE_DEBUG_OPTION": " ",
+    "NODE_ENV": "development",
+    "NODE_PATH": "D:\\NodeJS\\node_global\\node_modules",
+    "npm_config_argv": "{\"remain\":[],\"cooked\":[\"run\",\"serve\"],\"original\":[\"run\",\"serve\"]}",
+    "npm_config_bin_links": "true",
+    "npm_config_cache": "D:\\NodeJS\\node_cache",
+    "npm_config_color": "always",
+    "npm_config_disturl": "https://npm.taobao.org/dist",
+    "npm_config_ignore_optional": "",
+    "npm_config_ignore_scripts": "",
+    "npm_config_init_license": "MIT",
+    "npm_config_init_version": "1.0.0",
+    "npm_config_prefix": "D:\\NodeJS\\node_global",
+    "npm_config_registry": "https://registry.npmjs.org",
+    "npm_config_save_prefix": "^",
+    "npm_config_strict_ssl": "true",
+    "npm_config_user_agent": "yarn/1.21.1 npm/? node/v12.13.1 win32 x64",
+    "npm_config_version_commit_hooks": "true",
+    "npm_config_version_git_message": "v%s",
+    "npm_config_version_git_sign": "",
+    "npm_config_version_git_tag": "true",
+    "npm_config_version_tag_prefix": "v",
+    "npm_execpath": "D:\\yarn\\bin\\yarn.js",
+    "npm_lifecycle_event": "serve",
+    "npm_lifecycle_script": "vue-cli-service serve",
+    "npm_node_execpath": "D:\\NodeJS\\node.exe",
+    "npm_package_browserslist_0": "> 1%",
+    "npm_package_browserslist_1": "last 2 versions",
+    "npm_package_browserslist_2": "not ie <= 10",
+    "npm_package_dependencies_ant_design_vue": "^1.5.3",
+    "npm_package_dependencies_apexcharts": "^3.6.5",
+    "npm_package_dependencies_axios": "^0.18.0",
+    "npm_package_dependencies_clipboard": "^2.0.4",
+    "npm_package_dependencies_codemirror": "^5.46.0",
+    "npm_package_dependencies_dayjs": "^1.8.0",
+    "npm_package_dependencies_enquire_js": "^2.1.6",
+    "npm_package_dependencies_js_cookie": "^2.2.0",
+    "npm_package_dependencies_lodash_get": "^4.4.2",
+    "npm_package_dependencies_lodash_pick": "^4.4.0",
+    "npm_package_dependencies_md5": "^2.2.1",
+    "npm_package_dependencies_nprogress": "^0.2.0",
+    "npm_package_dependencies_tinymce": "^5.1.4",
+    "npm_package_dependencies_viser_vue": "^2.4.4",
+    "npm_package_dependencies_vue": "^2.6.10",
+    "npm_package_dependencies_vuedraggable": "^2.20.0",
+    "npm_package_dependencies_vuex": "^3.0.1",
+    "npm_package_dependencies_vuex_class": "^0.3.1",
+    "npm_package_dependencies_vue_apexcharts": "^1.3.2",
+    "npm_package_dependencies_vue_class_component": "^6.0.0",
+    "npm_package_dependencies_vue_cropper": "^0.4.8",
+    "npm_package_dependencies_vue_i18n": "^8.7.0",
+    "npm_package_dependencies_vue_loader": "^15.7.0",
+    "npm_package_dependencies_vue_ls": "^3.2.0",
+    "npm_package_dependencies_vue_photo_preview": "^1.1.3",
+    "npm_package_dependencies_vue_print_nb_jeecg": "^1.0.9",
+    "npm_package_dependencies_vue_property_decorator": "^7.3.0",
+    "npm_package_dependencies_vue_router": "^3.0.1",
+    "npm_package_dependencies_vue_splitpane": "^1.0.4",
+    "npm_package_dependencies__antv_data_set": "^0.10.2",
+    "npm_package_dependencies__jeecg_antd_online_214": "^2.1.41",
+    "npm_package_dependencies__tinymce_tinymce_vue": "^2.0.0",
+    "npm_package_description": "#### 介绍 jeecg-boot-study的前台项目，前后端分离。在该项目的基础上，我完成的“车型管理”模块在src/views/modules/car目录下。",
+    "npm_package_devDependencies_babel_eslint": "^10.0.1",
+    "npm_package_devDependencies_eslint": "^5.16.0",
+    "npm_package_devDependencies_eslint_plugin_vue": "^5.1.0",
+    "npm_package_devDependencies_html_webpack_plugin": "^4.0.0-beta.11",
+    "npm_package_devDependencies_less": "^3.9.0",
+    "npm_package_devDependencies_less_loader": "^4.1.0",
+    "npm_package_devDependencies_vue_template_compiler": "^2.6.10",
+    "npm_package_devDependencies__babel_polyfill": "^7.2.5",
+    "npm_package_devDependencies__vue_cli_plugin_babel": "^3.3.0",
+    "npm_package_devDependencies__vue_cli_plugin_eslint": "^3.3.0",
+    "npm_package_devDependencies__vue_cli_service": "^3.3.0",
+    "npm_package_devDependencies__vue_eslint_config_standard": "^4.0.0",
+    "npm_package_eslintConfig_env_node": "true",
+    "npm_package_eslintConfig_extends_0": "plugin:vue/strongly-recommended",
+    "npm_package_eslintConfig_extends_1": "@vue/standard",
+    "npm_package_eslintConfig_parserOptions_parser": "babel-eslint",
+    "npm_package_eslintConfig_root": "true",
+    "npm_package_eslintConfig_rules_generator_star_spacing": "off",
+    "npm_package_eslintConfig_rules_indent_0": "1",
+    "npm_package_eslintConfig_rules_indent_1": "4",
+    "npm_package_eslintConfig_rules_no_console": "0",
+    "npm_package_eslintConfig_rules_no_mixed_operators": "0",
+    "npm_package_eslintConfig_rules_no_tabs": "0",
+    "npm_package_eslintConfig_rules_vue_attribute_hyphenation": "0",
+    "npm_package_eslintConfig_rules_vue_component_name_in_template_casing": "0",
+    "npm_package_eslintConfig_rules_vue_html_closing_bracket_newline": "0",
+    "npm_package_eslintConfig_rules_vue_html_closing_bracket_spacing": "0",
+    "npm_package_eslintConfig_rules_vue_html_self_closing": "0",
+    "npm_package_eslintConfig_rules_vue_max_attributes_per_line_0": "2",
+    "npm_package_eslintConfig_rules_vue_max_attributes_per_line_1_multiline_allowFirstLine": "false",
+    "npm_package_eslintConfig_rules_vue_max_attributes_per_line_1_multiline_max": "1",
+    "npm_package_eslintConfig_rules_vue_max_attributes_per_line_1_singleline": "5",
+    "npm_package_eslintConfig_rules_vue_multiline_html_element_content_newline": "0",
+    "npm_package_eslintConfig_rules_vue_no_parsing_error": "0",
+    "npm_package_eslintConfig_rules_vue_no_unused_components": "0",
+    "npm_package_eslintConfig_rules_vue_no_use_v_if_with_v_for": "0",
+    "npm_package_eslintConfig_rules_vue_singleline_html_element_content_newline": "0",
+    "npm_package_license": "MIT",
+    "npm_package_name": "vue-antd-jeecg",
+    "npm_package_private": "true",
+    "npm_package_readmeFilename": "README.md",
+    "npm_package_scripts_build": "vue-cli-service build",
+    "npm_package_scripts_lint": "vue-cli-service lint",
+    "npm_package_scripts_pre": "cnpm install || yarn --registry https://registry.npm.taobao.org || npm install --registry https://registry.npm.taobao.org ",
+    "npm_package_scripts_serve": "vue-cli-service serve",
+    "npm_package_version": "2.1.4",
+    "NUMBER_OF_PROCESSORS": "8",
+    "OS": "Windows_NT",
+    "Path": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp\\yarn--1587465490331-0.36649220712151687;E:\\myCode\\ant-design-vue-jeecg\\node_modules\\.bin;C:\\Users\\Administrator\\AppData\\Local\\Yarn\\Data\\link\\node_modules\\.bin;D:\\NodeJS\\node_global\\bin;D:\\libexec\\lib\\node_modules\\npm\\bin\\node-gyp-bin;D:\\lib\\node_modules\\npm\\bin\\node-gyp-bin;D:\\NodeJS\\node_modules\\npm\\bin\\node-gyp-bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;D:\\java\\jdk1.8\\bin;D:\\Git\\cmd;D:\\NodeJS\\;D:\\yarn\\bin\\;C:\\Program Files\\MySQL\\MySQL Server 5.7\\bin;C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps;D:\\IntelliJ IDEA 2018.3.5\\bin;;D:\\NodeJS\\node_global;C:\\Users\\Administrator\\AppData\\Local\\Yarn\\bin",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD",
+    "PROCESSOR_LEVEL": "23",
+    "PROCESSOR_REVISION": "1801",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Program Files\\WindowsPowerShell\\Modules;C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\Windows",
+    "TEMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\ADMINI~1\\AppData\\Local\\Temp",
+    "USERDOMAIN": "WIN-VTT8J6JN47J",
+    "USERDOMAIN_ROAMINGPROFILE": "WIN-VTT8J6JN47J",
+    "USERNAME": "Administrator",
+    "USERPROFILE": "C:\\Users\\Administrator",
+    "VUE_CLI_ENTRY_FILES": "[\"E:\\\\myCode\\\\ant-design-vue-jeecg\\\\src\\\\main.js\"]",
+    "WEBPACK_DEV_SERVER": "true",
+    "windir": "C:\\Windows",
+    "YARN_WRAP_OUTPUT": "false"
+  },
+  "sharedObjects": [
+    "D:\\NodeJS\\node.exe",
+    "C:\\Windows\\SYSTEM32\\ntdll.dll",
+    "C:\\Windows\\System32\\KERNEL32.DLL",
+    "C:\\Windows\\System32\\KERNELBASE.dll",
+    "C:\\Windows\\System32\\WS2_32.dll",
+    "C:\\Windows\\SYSTEM32\\dbghelp.dll",
+    "C:\\Windows\\System32\\RPCRT4.dll",
+    "C:\\Windows\\System32\\ucrtbase.dll",
+    "C:\\Windows\\System32\\ADVAPI32.dll",
+    "C:\\Windows\\System32\\msvcrt.dll",
+    "C:\\Windows\\System32\\sechost.dll",
+    "C:\\Windows\\System32\\USER32.dll",
+    "C:\\Windows\\System32\\win32u.dll",
+    "C:\\Windows\\System32\\GDI32.dll",
+    "C:\\Windows\\System32\\gdi32full.dll",
+    "C:\\Windows\\System32\\msvcp_win.dll",
+    "C:\\Windows\\System32\\PSAPI.DLL",
+    "C:\\Windows\\System32\\CRYPT32.dll",
+    "C:\\Windows\\SYSTEM32\\USERENV.dll",
+    "C:\\Windows\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\Windows\\System32\\MSASN1.dll",
+    "C:\\Windows\\System32\\bcrypt.dll",
+    "C:\\Windows\\System32\\profapi.dll",
+    "C:\\Windows\\SYSTEM32\\WINMM.dll",
+    "C:\\Windows\\SYSTEM32\\winmmbase.dll",
+    "C:\\Windows\\System32\\cfgmgr32.dll",
+    "C:\\Windows\\System32\\bcryptPrimitives.dll",
+    "C:\\Windows\\System32\\IMM32.DLL",
+    "C:\\Windows\\System32\\powrprof.dll",
+    "C:\\Windows\\System32\\UMPDC.dll",
+    "C:\\Windows\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\Windows\\system32\\uxtheme.dll",
+    "C:\\Windows\\System32\\combase.dll",
+    "C:\\Windows\\system32\\mswsock.dll",
+    "C:\\Windows\\System32\\kernel.appcore.dll",
+    "C:\\Windows\\system32\\NLAapi.dll",
+    "C:\\Windows\\system32\\napinsp.dll",
+    "C:\\Windows\\system32\\pnrpnsp.dll",
+    "C:\\Windows\\SYSTEM32\\DNSAPI.dll",
+    "C:\\Windows\\System32\\NSI.dll",
+    "C:\\Windows\\System32\\winrnr.dll",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\Windows\\SYSTEM32\\dhcpcsvc.DLL"
+  ]
+}
