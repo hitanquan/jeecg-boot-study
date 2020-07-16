@@ -35,13 +35,6 @@ import java.util.List;
 @RequestMapping("/carManage/car")
 @Slf4j
 public class CarController extends JeecgController<Car, ICarService> {
-    // 以毫秒表示的时间
-    // private static final long MINUTE_IN_MILLIS = 60 * 1000;
-    // private static final long HOUR_IN_MILLIS = 3600 * 1000;
-    // private static final long DAY_IN_MILLIS = 24 * 3600 * 1000;
-    // 数字太大，内存溢出
-    // private static final long MONTH_IN_MILLIS = 30 * 24 * 3600 * 1000L;
-
     @Autowired
     private ICarService carService;
     private String userName;
