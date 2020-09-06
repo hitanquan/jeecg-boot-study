@@ -44,6 +44,7 @@ public class Car implements Serializable {
 	/**
 	 * 车类型（1:轿车，2:新能源，3:SUV/MPV，4:油电混合）
 	 */
+	@Dict(dictCode = "type")
 	@Excel(name = "车类型", width = 15)
 	private Integer type;
 	/**指导价*/

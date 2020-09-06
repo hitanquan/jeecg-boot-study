@@ -25,7 +25,7 @@ public class CarVO implements Serializable {
 	private String alias;
 	private String title;
 	private String  identificationCode;
-	@Dict(dicCode = "type")
+	@Dict(dictCode = "type")
 	private Integer type;
 	private BigDecimal suggestPrice;
     private String logoImg;

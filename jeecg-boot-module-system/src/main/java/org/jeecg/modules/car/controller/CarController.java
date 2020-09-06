@@ -54,10 +54,10 @@ public class CarController extends JeecgController<Car, ICarService> {
      */
     @GetMapping(value = "/rootList")
     public Result<?> queryPageList(Car car,
-                                   @RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo,
-                                   @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize,
-                                   @RequestParam(name = "sorterName", defaultValue = "createTime") String sorterName,
-                                   @RequestParam(name = "sorterRule", defaultValue = "descend") String sorterRule) {
+           @RequestParam(name = "pageNo", defaultValue = "1") Integer pageNo,
+           @RequestParam(name = "pageSize", defaultValue = "10") Integer pageSize,
+           @RequestParam(name = "sorterName", defaultValue = "createTime") String sorterName,
+           @RequestParam(name = "sorterRule", defaultValue = "descend") String sorterRule) {
         String id = null;
         Integer type = null;
         String name = null;
