@@ -61,26 +61,26 @@ public class SysAnnouncement implements Serializable {
      * 优先级（L低，M中，H高）
      */
     @Excel(name = "优先级", width = 15, dicCode = "priority")
-    @Dict(dicCode = "priority")
+    @Dict(dictCode = "priority")
     private String priority;
     
     /**
      * 消息类型1:通知公告2:系统消息
      */
     @Excel(name = "消息类型", width = 15, dicCode = "msg_category")
-    @Dict(dicCode = "msg_category")
+    @Dict(dictCode = "msg_category")
     private String msgCategory;
     /**
      * 通告对象类型（USER:指定用户，ALL:全体用户）
      */
     @Excel(name = "通告对象类型", width = 15, dicCode = "msg_type")
-    @Dict(dicCode = "msg_type")
+    @Dict(dictCode = "msg_type")
     private String msgType;
     /**
      * 发布状态（0未发布，1已发布，2已撤销）
      */
     @Excel(name = "发布状态", width = 15, dicCode = "send_status")
-    @Dict(dicCode = "send_status")
+    @Dict(dictCode = "send_status")
     private String sendStatus;
     /**
      * 发布时间

@@ -67,7 +67,7 @@ public class SysDictItem implements Serializable {
     /**
      * 状态（1启用 0不启用）
      */
-    @Dict(dicCode = "dict_item_status")
+    @Dict(dictCode = "dict_item_status")
     private Integer status;
 
     private String createBy;

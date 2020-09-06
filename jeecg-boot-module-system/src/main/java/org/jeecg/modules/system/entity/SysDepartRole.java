@@ -36,7 +36,7 @@ public class SysDepartRole {
 	/**部门id*/
 	@Excel(name = "部门id", width = 15)
 	@ApiModelProperty(value = "部门id")
-	@Dict(dictTable ="sys_depart",dicText = "depart_name",dicCode = "id")
+	@Dict(dictTable ="sys_depart",dictText = "depart_name",dictCode = "id")
 	private String departId;
 	/**部门角色名称*/
 	@Excel(name = "部门角色名称", width = 15)

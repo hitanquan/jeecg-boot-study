@@ -40,7 +40,7 @@ public class SysMessage extends JeecgEntity {
 	private Integer esSendNum;
 	/**推送状态 0未推送 1推送成功 2推送失败*/
 	@Excel(name = "推送状态 0未推送 1推送成功 2推送失败", width = 15)
-	@Dict(dicCode = "msgSendStatus")
+	@Dict(dictCode = "msgSendStatus")
 	private String esSendStatus;
 	/**推送时间*/
 	@Excel(name = "推送时间", width = 20, format = "yyyy-MM-dd HH:mm:ss")
@@ -52,7 +52,7 @@ public class SysMessage extends JeecgEntity {
 	private String esTitle;
 	/**推送方式：1短信 2邮件 3微信*/
 	@Excel(name = "推送方式：1短信 2邮件 3微信", width = 15)
-	@Dict(dicCode = "msgType")
+	@Dict(dictCode = "msgType")
 	private String esType;
 	/**备注*/
 	@Excel(name = "备注", width = 15)

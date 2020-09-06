@@ -53,7 +53,7 @@ public class SysDataSource {
     /**
      * 数据库类型
      */
-    @Dict(dicCode = "database_type")
+    @Dict(dictCode = "database_type")
     @Excel(name = "数据库类型", width = 15, dicCode = "database_type")
     @ApiModelProperty(value = "数据库类型")
     private String dbType;

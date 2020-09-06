@@ -20,7 +20,7 @@ public @interface Dict {
      *
      * @return 返回类型： String
      */
-    String dicCode();
+    String dictCode();
 
     /**
      * 方法描述:  数据Text
@@ -29,7 +29,7 @@ public @interface Dict {
      *
      * @return 返回类型： String
      */
-    String dicText() default "";
+    String dictText() default "";
 
     /**
      * 方法描述: 数据字典表

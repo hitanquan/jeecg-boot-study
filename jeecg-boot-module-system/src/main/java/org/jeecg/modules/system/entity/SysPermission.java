@@ -83,7 +83,7 @@ public class SysPermission implements Serializable {
 	/**
 	 * 类型（0：一级菜单；1：子菜单 ；2：按钮权限）
 	 */
-	@Dict(dicCode = "menu_type")
+	@Dict(dictCode = "menu_type")
 	private Integer menuType;
 
 	/**

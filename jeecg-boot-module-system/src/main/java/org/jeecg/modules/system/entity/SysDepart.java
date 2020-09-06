@@ -70,11 +70,11 @@ public class SysDepart implements Serializable {
 	private String memo;
 	/**状态（1启用，0不启用）*/
 	@Excel(name="状态",width=15)
-	@Dict(dicCode = "depart_status")
+	@Dict(dictCode = "depart_status")
 	private String status;
 	/**删除状态（0，正常，1已删除）*/
 	@Excel(name="删除状态",width=15)
-	@Dict(dicCode = "del_flag")
+	@Dict(dictCode = "del_flag")
 	private String delFlag;
 	/**创建人*/
 	private String createBy;

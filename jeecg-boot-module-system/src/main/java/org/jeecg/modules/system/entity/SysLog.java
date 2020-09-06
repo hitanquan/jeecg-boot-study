@@ -100,13 +100,13 @@ public class SysLog implements Serializable {
 	/**
 	 * 日志类型（1登录日志，2操作日志）
 	 */
-	@Dict(dicCode = "log_type")
+	@Dict(dictCode = "log_type")
 	private Integer logType;
 
 	/**
 	 * 操作类型（1查询，2添加，3修改，4删除,5导入，6导出）
 	 */
-	@Dict(dicCode = "operate_type")
+	@Dict(dictCode = "operate_type")
 	private Integer operateType;
 
 }

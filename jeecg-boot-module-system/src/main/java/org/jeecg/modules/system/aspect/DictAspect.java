@@ -98,8 +98,8 @@ public class DictAspect {
                     for (Field field : oConvertUtils.getAllFields(record)) {
                     //update-end--Author:scott  -- Date:20190603 ----for：解决继承实体字段无法翻译问题------
                         if (field.getAnnotation(Dict.class) != null) {
-                            String code = field.getAnnotation(Dict.class).dicCode();
-                            String text = field.getAnnotation(Dict.class).dicText();
+                            String code = field.getAnnotation(Dict.class).dictCode();
+                            String text = field.getAnnotation(Dict.class).dictText();
                             String table = field.getAnnotation(Dict.class).dictTable();
                             String key = String.valueOf(item.get(field.getName()));
 

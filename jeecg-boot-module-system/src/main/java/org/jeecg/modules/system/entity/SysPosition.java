@@ -49,7 +49,7 @@ public class SysPosition {
      */
     @Excel(name = "职级", width = 15,dicCode ="position_rank")
     @ApiModelProperty(value = "职级")
-    @Dict(dicCode = "position_rank")
+    @Dict(dictCode = "position_rank")
     private String postRank;
     /**
      * 公司id
